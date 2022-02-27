@@ -1,0 +1,34 @@
+ {
+    "id": "org.kde.kdiff3",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-21.08",
+    "sdk": "org.kde.Sdk",
+    "command": "kdiff3",
+    "finish-args": [
+        "--device=dri",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland"
+    ],
+
+    "modules": [
+        "boost.json",
+        {
+            "name": "kdiff3",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/kdiff3/kdiff3-1.9.2.tar.xz",
+                    "sha256": "f1775f1ca501080363707b2923d493fc314ae4f0b00b172d4cad9b4d3cc2d805",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://download.kde.org/stable/kdiff3",
+                        "version-pattern": "kdiff3-([\\d.]+)\\.tar\\.xz",
+                        "url-template": "https://download.kde.org/stable/kdiff3/kdiff3-$version.tar.xz"
+                    }
+                }
+            ]
+        }
+    ]
+}
